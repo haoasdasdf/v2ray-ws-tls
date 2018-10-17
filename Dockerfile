@@ -13,7 +13,7 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends wget unzip php-fpm php-curl php-cli php-mcrypt php-mysql php-readline
 
 RUN wget --no-check-certificate -O v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
-	&& unzip v2ray.zip \
+	&& unzip v2ray.zip -d v2ray-v$VER-linux-64\
 	&& mv ./v2ray-v$VER-linux-64/v2ray /usr/local/bin/ \
 	&& mv ./v2ray-v$VER-linux-64/v2ctl /usr/local/bin/ \
 	&& chmod 777 /usr/local/bin/v2ctl \
